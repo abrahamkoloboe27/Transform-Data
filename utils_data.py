@@ -20,8 +20,8 @@ def transform_data(df) :
         Valuee.append(row[5])
         CumulValue.append(0)
         Code.append("")
-        DayNum.append("")
-        NumStns.append("")
+        DayNum.append(0)
+        NumStns.append(0)
         Source.append("METEO-BENIN")
     data = pd.DataFrame({
         "Station" : Station,
