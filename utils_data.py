@@ -11,16 +11,19 @@ def transform_data(df) :
     Valuee = []
     CumulValue = []
     Source = []
+    Code = []
     for row in df_np :
         Station.append(row[0])
         Date.append(str(int(row[2]))+"/"+str('{:02d}'.format(int(row[3])))+"/"+str('{:02d}'.format(int(row[4]))))
         Valuee.append(row[5])
         CumulValue.append(0)
+        Code.append([])
         Source.append("METEO-BENIN")
     data = pd.DataFrame({
         "Station" : Station,
         "Date" : Date,
         "Valuee" : Valuee,
+        "Codee" : Code, 
         "CumulValue" : CumulValue,
         "Source" : Source
         })
