@@ -41,9 +41,10 @@ if file is not None:
             contenu_initial = f.read()
             f.seek(0, 0)
             f.write(f"{str(entete)}\n" + contenu_initial)
-            f.close()
+        f_mod = contenu_initial.replace('.0', '')
+        with open(f"{name}.txt", 'w') as f: 
+            f.write(f_mod)
         with open(f"{name}.txt", 'r+') as f:
-
             st.session_state.file = f"{name}.txt"
             st.sidebar.download_button('Télecharger', f, file_name=st.session_state.file )
             st.success("Données enregistrées avec succès")
